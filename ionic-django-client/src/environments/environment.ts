@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api_url: 'http://127.0.0.1:8000/',
+  login: 'rest-auth/login/',
+  register: 'rest-auth/register/',
+  logout: 'rest-auth/logout/',
+  user: 'rest-auth/user/'
 };
 
 /*

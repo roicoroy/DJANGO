@@ -1,0 +1,51 @@
+// Fix keyboard pushing content up
+.scroll-content {
+    padding-bottom: 0 !important;
+  }
+  //
+  ion-row.logo-row {
+    ion-col {
+      margin: 0 0vw 0vw 1vw;
+      .custom-logo {
+        margin-top: 15%;
+        margin-bottom: 10%;
+        width: 75vw;
+      }
+    }
+  }
+  form {
+    ion-item {
+      margin: 0 5vw 2.5vw 5vw;
+      border: 1px solid var(--ion-color-dark);
+    }
+    ion-input {
+      font-size: calc(5vw + 0px);
+      color: var(--ion-color-medium);
+      text-align: center;
+      height: calc(12.5vw + 5px);
+    }
+    .button-container {
+      margin: 0 5vw 2.5vw 5vw;
+      ion-button {
+        height: calc(15vw + 5px);
+      }
+      ion-button ion-text {
+        font-size: calc(7vw + 0px);
+      }
+      .register-btn {
+        margin-top: 2vh;
+      }
+    }
+  }
+  .input-radius {
+    border-radius: 30px;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  .text-validation {
+    text-align: center;
+    ion-text {
+      color: var(--ion-color-light);
+    }
+  }
+  

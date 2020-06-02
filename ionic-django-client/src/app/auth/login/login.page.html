@@ -1,0 +1,73 @@
+<ion-content class='brand-oswald content' no-bounce has-bouncing="false" forceOverscroll="false">
+  <ion-grid>
+    <ion-row class='logo-row'>
+      <ion-col class='ion-text-center'>
+      </ion-col>
+    </ion-row>
+    <form [formGroup]="loginForm" (submit)="onSubmit()" novalidate>
+      <ion-row>
+        <ion-col>
+          <ion-item class='input-radius'>
+            <ion-input type="email" placeholder='Email' formControlName="username"></ion-input>
+          </ion-item>
+          <div class='text-validation'
+            *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.hasError('required')">
+            <ion-text>
+              The email field is required.
+            </ion-text>
+          </div>
+          <div class='text-validation' *ngIf="email_errors">
+            <ion-text>
+              {{ email_errors }}
+            </ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item class='input-radius'>
+            <ion-input type="password" placeholder='Password' formControlName="password"></ion-input>
+          </ion-item>
+          <div class='text-validation'
+            *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('required')">
+            <ion-text>
+              The Password field is required.
+            </ion-text>
+          </div>
+          <div class='text-validation'
+            *ngIf="non_field_errors && !(loginForm.get('password')?.touched && loginForm.get('password')?.hasError('required'))">
+            <ion-text>
+              {{ non_field_errors }}
+            </ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item *ngIf='access_code_field' class='input-radius'>
+            <ion-input type="text" placeholder='Access Code' formControlName="access_code">
+            </ion-input>
+          </ion-item>
+          <div class='text-validation'
+            *ngIf="loginForm.get('access_code')?.touched && loginForm.get('access_code')?.hasError('required')">
+            <ion-text>
+              The Access Code field is required.
+            </ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+      <div class='button-container ion-text-center'>
+        <ion-button shape="round" expand="block" fill="solid" color="primary" tappable type="submit">
+          <ion-text class='brand-header-text'>
+            <span>LET'S GO!</span>
+          </ion-text>
+        </ion-button>
+      </div>
+      <div class='ion-text-center'>
+        <ion-button (click)='register()' shape="round" tappable>
+          Register
+        </ion-button>
+      </div>
+    </form>
+  </ion-grid>
+</ion-content>

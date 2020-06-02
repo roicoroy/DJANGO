@@ -1,5 +1,7 @@
 {
   "name": "ionic-django-client",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
