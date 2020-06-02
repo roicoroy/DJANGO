@@ -1,0 +1,18 @@
+
+from django.urls import path, include  # add this
+from rest_framework.routers import DefaultRouter  # add this
+from rest_framework.authtoken.views import obtain_auth_token  # <-- Here
+from .views import ( ContactList, new_contact, contact_details, update_contact, delete_contact )
+from .api import ContactViewSet  # add this
+
+router = DefaultRouter()  # add this
+router.register('contacts_list', ContactViewSet, basename='contacts_list')  # add this
+
+urlpatterns = [
+    path("api/", include(router.urls)),
+    # path("contacts_list/", ContactList.as_view(), name="contacts_list"),
+    # path("contacts_list/new/", new_contact, name="new"),
+    # path("contacts_list/<int:id>/details/", contact_details, name="details"),
+    # path("contacts_list/<int:id>/update/", update_contact, name="update"),
+    # path("contacts_list/<int:id>/delete/", delete_contact, name="delete"),
+]
